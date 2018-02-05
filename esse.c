@@ -3,30 +3,7 @@
 int list[101];
 int count = 5;
 
-void getList
-
-void simpleSort()
-{
-	int buffer;
-	int k;
-
-	for (int i = 0; i < count; i++)
-	{
-		k = i;
-		for (int j = i; j < count; j++)
-		{
-			if (list[j] > list[i])
-			{
-				k = j;
-			}
-		}
-		buffer = list[i];
-		list[i] = list[k];
-		list[k] = buffer;
-	}
-}
-
-void main()
+void makeList()
 {
 	int i = 0;
 	int buffer = 0;
@@ -41,15 +18,60 @@ void main()
 			i++;
 		}
 	}
+}
 
-	simpleSort();
-
+void printList()
+{
 	printf("resposta!\n");
 
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < count; ++i)
 	{
 		printf("%d\n", list[i]);
 	}
+}
+
+void printEvenOdd() {
+	int odd = 0;
+	for (int i = 0; i < count; ++i)
+	{
+		if (list[i] % 2 == 0)
+		{
+			odd++;
+		}
+	}
+	printf("There are %d odd number(s) and %d even number(s).\n",odd , (count - odd) );
+}
+
+void simpleSort()
+{
+	int buffer;
+	int k;
+
+	for (int i = 0; i < count; ++i)
+	{
+		k = i;
+		for (int j = i; j < count; ++j)
+		{
+			if (list[j] >= list[i])
+			{
+				k = j;
+			}
+		}
+		buffer = list[i];
+		list[i] = list[k];
+		list[k] = buffer;
+	}
+}
+
+void main()
+{
+	makeList();
+
+	simpleSort();
+
+	printList();
+
+	printEvenOdd();
 
 	system("pause");
 }
