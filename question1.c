@@ -63,6 +63,28 @@ void simpleSort()
 	}
 }
 
+void averageOffOddOverFifty()
+{
+	int buffer = 0;
+	int k = 0;
+
+	for (int i = 0; i < count; ++i)
+	{
+		if (list[i] % 2 == 1 && list[i] > 50)
+		{
+			k++;
+			buffer += list[i];
+		}
+	}
+
+	if (k == 0)
+	{
+		printf("Nao ah numeros maiores que 50 e impares\n");
+	} else {
+		printf("A media dos impares maiores que 50 eh %d\n", buffer/k);
+	}
+}
+
 void main()
 {
 	makeList();
@@ -72,6 +94,8 @@ void main()
 	printList();
 
 	printEvenOdd();
+
+	averageOffOddOverFifty();
 
 	system("pause");
 }
