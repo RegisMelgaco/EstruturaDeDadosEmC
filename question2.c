@@ -2,8 +2,10 @@
 
 int n = 5;
 int ny;
+int nw = 0;
 int x[101];
 int y[101];
+int w[51];
 
 void readVectorX()
 {
@@ -33,6 +35,15 @@ void createVectorY()
 	}
 }
 
+void createVectorW()
+{
+	for (int i = 0; i < n; i = i + 2)
+	{
+		w[nw] = x[i];
+		nw++;
+	}
+}
+
 void main()
 {
 	readVectorX(n);
@@ -41,11 +52,17 @@ void main()
 
 	printVector(x,n);
 
-	printf("Vetor y\n");
-
 	createVectorY();
 
+	printf("Vetor y\n");
+
 	printVector(y,ny);
+
+	createVectorW();
+
+	printf("Vetor w\n");
+
+	printVector(w,nw);
 
 	system("pause");
 }
