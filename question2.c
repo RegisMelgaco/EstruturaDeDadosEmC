@@ -44,6 +44,20 @@ void createVectorW()
 	}
 }
 
+int searchZ(int z)
+{
+	for (int i = 0; i < n; ++i)
+	{
+		if (x[i] == z)
+		{
+			printf("O elemento %d exite na lista na posicao: %d\n",z ,i );
+			return 1;
+		}
+	}
+	printf("O elemento %d nao existe na lista\n",z );
+	return 0;
+}
+
 void main()
 {
 	readVectorX(n);
@@ -63,6 +77,10 @@ void main()
 	printf("Vetor w\n");
 
 	printVector(w,nw);
+
+	searchZ(2);
+
+	searchZ(0);
 
 	system("pause");
 }
