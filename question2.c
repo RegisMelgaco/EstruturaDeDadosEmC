@@ -58,6 +58,26 @@ int searchZ(int z)
 	return 0;
 }
 
+void searchSmallestAndBigest()
+{
+	int menor;
+	int maior;
+	for (int i = 0; i < n; ++i)
+	{
+		if (!menor || x[i] < menor)
+		{
+			menor = x[i];
+		}
+		if (!maior || x[i] > maior)
+		{
+			maior = x[i];
+		}
+	}
+
+	printf("O maior eh %d\n", maior );
+	printf("O menor eh %d\n", menor );
+}
+
 void main()
 {
 	readVectorX(n);
@@ -81,6 +101,8 @@ void main()
 	searchZ(2);
 
 	searchZ(0);
+
+	searchSmallestAndBigest();
 
 	system("pause");
 }
