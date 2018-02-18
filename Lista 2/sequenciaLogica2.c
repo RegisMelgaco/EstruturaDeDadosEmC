@@ -4,13 +4,11 @@ void main()
 {
 	int x;
 	int y;
+	int i;
 
-	printf("prima o valor de x: ");
-	scanf("%d", &x);
-	printf("prima o valor de y: ");
-	scanf("%d", &y);
+	scanf("%d %d", &x, &y);
 
-	for (int i = 1; i <= y; ++i)
+	for (i = 1; i <= y; ++i)
 	{
 		if (i % x == 0)
 		{
